@@ -120,6 +120,25 @@
       0%, 100% { opacity: 0.3; transform: scaleY(1); }
       50% { opacity: 0.6; transform: scaleY(1.15); }
     }
+    @keyframes gallery-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .gallery-track {
+      animation: gallery-scroll 30s linear infinite;
+      display: flex;
+      width: max-content;
+    }
+    .gallery-track:hover { animation-play-state: paused; }
+    .gallery-mask {
+      mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .gallery-img {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+      will-change: transform;
+    }
+    .gallery-img:hover { transform: scale(1.06); filter: brightness(1.1); }
   </style>
 </head>
 <body class="bg-navy-deep text-white overflow-x-hidden">
@@ -312,7 +331,7 @@
         <!-- Hardscape -->
         <a href="services.html#hardscape" class="service-card group block bg-navy-muted/50 border border-navy-light/20 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(13,59,110,0.35), 0 2px 8px rgba(0,0,0,0.25);">
           <div class="relative h-44 overflow-hidden">
-            <img src="brand_assets/photos/89DDB743-175A-4E9F-A373-95CDE6F4B6EA.jpeg" alt="Hardscape" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src="brand_assets/photos/IMG_8164.jpeg" alt="Hardscape" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(13,59,110,0.85) 0%, rgba(13,59,110,0.2) 60%, transparent 100%);"></div>
             <div class="absolute inset-0 bg-green/10 mix-blend-multiply"></div>
           </div>
@@ -359,7 +378,11 @@
               <svg class="w-4 h-4 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
             </div>
             <h3 class="font-display font-semibold text-lg text-white mb-2">Lawn Maintenance</h3>
-            <p class="font-body text-white/55 text-sm leading-[1.7]">Spring clean-ups, mowing, de-thatching, fall clean-ups, and more.</p>
+            <ul class="space-y-1.5">
+              <li class="flex items-start gap-1.5 font-body text-white/55 text-xs leading-[1.5]"><svg class="w-3 h-3 text-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Spring Cleanups & dethatching</li>
+              <li class="flex items-start gap-1.5 font-body text-white/55 text-xs leading-[1.5]"><svg class="w-3 h-3 text-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Mowing, Weeding & Shrub & Tree pruning</li>
+              <li class="flex items-start gap-1.5 font-body text-white/55 text-xs leading-[1.5]"><svg class="w-3 h-3 text-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Aeration, Over-seeding & Fall Clean ups</li>
+            </ul>
             <div class="mt-4 flex items-center gap-1 text-green text-xs font-body font-semibold tracking-wide group-hover:gap-2 transition-[gap] duration-200">
               Learn More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </div>
@@ -397,7 +420,7 @@
               <div class="w-8 h-8 bg-green/20 rounded-lg flex items-center justify-center mb-3">
                 <svg class="w-4 h-4 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
               </div>
-              <h3 class="font-display font-semibold text-lg text-white mb-2">Winter Snow & Ice</h3>
+              <h3 class="font-display font-semibold text-lg text-white mb-2">Winter Snow & Ice Services</h3>
               <p class="font-body text-white/55 text-sm leading-[1.7]">Reliable plowing and shoveling for driveways, parking lots, and walkways.</p>
               <div class="mt-4 flex items-center gap-1 text-green text-xs font-body font-semibold tracking-wide group-hover:gap-2 transition-[gap] duration-200">
                 Learn More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -413,6 +436,42 @@
           View All Services
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="relative py-20 md:py-28 overflow-hidden" style="background-color: #01243F;">
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(141,198,63,0.06) 0%, transparent 65%);"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center mb-14 fade-in">
+      <div class="inline-block bg-green/15 border border-green/30 rounded-full px-3 py-1 mb-5">
+        <span class="font-body text-green text-xs font-semibold tracking-[0.12em] uppercase">Our Work</span>
+      </div>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-white tracking-[-0.03em]">Gallery</h2>
+    </div>
+
+    <div class="relative z-10 w-full overflow-hidden gallery-mask">
+      <div class="gallery-track gap-5" style="gap: 20px;">
+        <!-- Original 9 -->
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/1.PNG" alt="Gallery 1" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/2.PNG" alt="Gallery 2" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/3.PNG" alt="Gallery 3" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/4.PNG" alt="Gallery 4" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/5.PNG" alt="Gallery 5" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/6.PNG" alt="Gallery 6" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/7.PNG" alt="Gallery 7" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/8.PNG" alt="Gallery 8" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/9.PNG" alt="Gallery 9" class="w-full h-full object-cover" loading="eager"/></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/1.PNG" alt="Gallery 1" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/2.PNG" alt="Gallery 2" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/3.PNG" alt="Gallery 3" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/4.PNG" alt="Gallery 4" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/5.PNG" alt="Gallery 5" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/6.PNG" alt="Gallery 6" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/7.PNG" alt="Gallery 7" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/8.PNG" alt="Gallery 8" class="w-full h-full object-cover" loading="eager"/></div>
+        <div class="gallery-img flex-shrink-0 w-60 h-60 md:w-72 md:h-72 rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4);"><img src="brand_assets/photos/9.PNG" alt="Gallery 9" class="w-full h-full object-cover" loading="eager"/></div>
       </div>
     </div>
   </section>
